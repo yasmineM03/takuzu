@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="mystyle.css">
+    <link href="https://fonts.cdnfonts.com/css/happy-groovy" rel="stylesheet">
+    <style>
+        @import url('https://fonts.cdnfonts.com/css/happy-groovy');
+    </style>
+</head>
+<body>
+
+    <!-- ********************* html ********************* -->
+
+    <h1> Takuzu </h1>
+
+    <button id="Règles">
+          Regles
+      </button>
+    <div id="Popup" class="popup">
+        <div class="popup-content">
+            <h2>Regles du jeu</h2>
+            <p>On dispose d'une grille qu'il faut remplir de chats gris et roux en respectent les règles suivantes :<br></p>
+            <ul>
+                <li>il ne peut pas y avoir plus de 2 chats de même couleur à la suite</li>
+                <li>il ne doit pas y avoir plus de la moitié des chats d'une ligne ou d'une colonne de même couleur</li>
+            </ul>
+            <p>Et nous  pouvons ajouter les options suivantes :</p>
+            <ul>
+                <li>il ne peut y avoir deux lignes ou colonnes identiques</li>
+             <li>le jeu se replie sur lui-même et ainsi les cases de deux extrémités se suivent</li>
+            </ul>
+            </p> 
+            <button id="closePopup">
+                  Fermer
+            </button>
+        </div>
+    </div>
+
+   <button id="Commandes">
+          Commandes
+      </button>
+    <div id="Popup1" class="popup">
+        <div class="popup-content">
+            <h2>Commandes de jeu</h2>
+            <p>Les chats qui ont une couronne sont immutables, ils ne peuvent pas être modifier.<br>
+            Placer un chat gris :
+            <ul>
+                <li>sur ordinateur : clic gauche</li>
+                <li>sur téléphone : clic simple</li>
+            </ul>
+            Placer un chat roux :
+            <ul>
+                <li>sur ordinateur : clic droit</li>
+                <li>sur téléphone : clic long</li>
+            </ul>
+            Un deuxième clic sur une case pleine va la vider. <br>
+            </p>
+            <button id="closePopup1">
+                  Fermer
+            </button>
+        </div>
+    </div>
+
+
+
+    <pre id="result"></pre>
+
+    <hr>
+    <p><em>Arnaud Gomes, Yasmine Maabout, Justine Ruch<br> 
+        <a href="https://moodle1.u-bordeaux.fr/course/view.php?id=10858"> Projet Techno 2023 </a >
+    </em></p>
+
+
+    <div>
+		<div style="display: flex; flex-direction: column;">
+			<label for="rows_selector">Lignes :</label>
+			<select id="rows_selector">
+				<option value="2">2</option>
+				<option value="4">4</option>
+				<option value="6">6</option>
+				<option value="8">8</option>
+				<option value="10">10</option>
+			</select>
+
+			<label for="cols_selector">Colonnes :</label>
+			<select id="cols_selector">
+				<option value="2">2</option>
+				<option value="4">4</option>
+				<option value="6">6</option>
+				<option value="8">8</option>
+				<option value="10">10</option>
+			</select>
+		</div>
+		<div style="padding-left : 20px ;display: flex; flex-direction: column;">
+			<label><input type="checkbox" id="wrapping" value="option1"> Wrapping</label>
+			<label><input type="checkbox" id="unique" value="option2"> Unique</label>
+		</div>
+        <div class="game_actions">
+        <button id="restart">Restart</button>
+        <button id="solve">Solve</button>
+        <button id="undo">Undo</button>
+        <button id="redo">Redo</button>
+        <button id="random">New random game</button>
+        </div>
+		
+    </div>
+    
+    <!-- ********************* script ********************* -->
+    <canvas id="grille" width="500" height="500"></canvas>
+    <script src="game.js"></script>
+    <script src="demo.js"> </script>
+    
+
+</body>
+
+</html>
